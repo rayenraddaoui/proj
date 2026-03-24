@@ -3,8 +3,8 @@ import './App.css'
 import './index.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inscrir from "./about/app";
-import Todo from "../compante/todo"
-import Acceuil from "../compante/acceuil"
+import Todo from "../compante/Todo"
+import Acceuil from "../compante/Acceuil"
 import Calculatrice from "../compante/calculatrice"
 function App() {
  

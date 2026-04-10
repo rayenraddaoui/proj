@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+# Frontend PJ1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application frontend construite avec React, TypeScript et Vite.
 
-Currently, two official plugins are available:
+## Fonctionnalites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Page de connexion
+- Page d'inscription
+- Page d'accueil
+- Todo list
+- Calculatrice
 
-## React Compiler
+## Prerequis
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 18+
+- npm
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Lancement en local
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Le serveur de developpement est disponible sur l'URL affichee par Vite (souvent http://localhost:5173).
+
+## Build production
+
+```bash
+npm run build
+```
+
+Le resultat du build est genere dans le dossier dist.
+
+## Preview locale du build
+
+```bash
+npm run preview
+```
+
+## Deploiement GitHub Pages
+
+Le projet est configure pour GitHub Pages avec:
+
+- base Vite: /proj/
+- routage React via HashRouter (URL de type #/route)
+
+URL de deploiement attendue:
+
+- https://rayenraddaoui.github.io/proj/#/
+
+Exemples de routes:
+
+- https://rayenraddaoui.github.io/proj/#/
+- https://rayenraddaoui.github.io/proj/#/about
+- https://rayenraddaoui.github.io/proj/#/todo
+
+## Scripts npm
+
+- npm run dev: lance le serveur de developpement
+- npm run build: compile TypeScript et build Vite
+- npm run preview: lance un serveur local pour le build
+- npm run lint: execute ESLint
+
+## Structure simple
+
+- src: point d'entree et configuration principale React
+- compante: composants pages
+- public: assets statiques
+
